@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<title>
+    Admin login
+</title>
+
+<body>
+<h2>ADMIN LOGIN</h2>
+
+{% if message %}
+    <p>{{ message }}</p>
+{% endif %}
+
+<form action="/registration/adminlogin" method="POST" id="form_login">
+  <label for="fname">Username:</label><br>
+  <input type="text" id="username" name="username"><br>
+  <label for="lname">Password:</label><br>
+  <input type="password" id="password" name="password" ><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+</body>
+</html>
+

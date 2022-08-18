@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+{% block content %}
+{% if student %}
+
+  <h1>Update Student details </h1>
+
+  <form action="/registration/editstudent/{{ student.ID}}" method="POST">  
+  <div class="form-group">
+    <label for="FirstName">First Name</label>
+    <input type="text" value="{{student.Firstname}}" class="form-control" name="Firstname" placeholder="Enter First Name" aria-describedby="">
+  </div>
+
+  <div class="form-group">
+    <label for="LastName">Last Name</label>
+    <input type="text" value="{{student.Lastname}}" class="form-control" name="Lastname" placeholder="Enter Last Name" aria-describedby="">
+  </div>
+  
+  <div class="form-group">
+    <label for="Branch">Branch</label>
+    <select class="form-control" name="Branch">
+    <option value="ECE" {% if student.Branch =="ECE" %} selected{% endif %} >ECE</option>
+    <option value="CSE" {% if student.Branch =="CSE" %} selected{% endif %} >CSE</option>
+    <option value="MECH" {% if student.Branch =="MECH" %} selected{% endif %} >MECH</option>
+        
+    </select>    
+  </div>
+
+  <div class="form-group">
+    <label for="Email">Email-id</label>
+    <input type="email" value="{{student.Email}}" min="18" class="form-control" name="Email" placeholder="Enter Email" aria-describedby="">
+  </div>
+
+  <div class="form-group">
+    <label for="Phonenumber">Phone number</label>
+    <input type="number" value="{{student.Phonenumber}}" min="10" class="form-control" name="Phonenumber" placeholder="Enter Phonenumber" aria-describedby="">
+  </div>
+
+  <div class="form-group">
+    <label for="Address">Address</label>
+    <input type="text" value="{{student.Address}}" min="5000" class="form-control" name= "Address" placeholder="Enter Address" aria-describedby="">
+  </div>
+
+    
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </form>  
+  {% endif %}
+{% endblock %} 
+
+
